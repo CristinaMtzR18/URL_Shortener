@@ -2,14 +2,22 @@ package com.maven.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.maven.model.shortenerURL;
+import com.maven.modelDAO.IshortenerURL;
 
+@Service
 public class shortenerURLService implements IshortenerURLService {
-
+	
+	@Autowired
+	private IshortenerURL dao;
+	
 	@Override
 	public List<shortenerURL> listar() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.listar();
 	}
 
 	@Override
